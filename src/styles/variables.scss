@@ -1,0 +1,27 @@
+@use './helpers' as *;
+:root {
+  --color-primary: #27ae60;
+  --color-accent: #e67e22;
+
+  --color-text-main: #2c3e50;
+  --color-text-muted: #7f8c8d;
+
+  --color-bg-body: #f8f9fa;
+  --color-bg-white: #ffffff;
+  --color-bg-dark: #1e272e;
+  --color-border: #e1e8ed;
+
+  --radius-sm: #{rem(4)};
+  --radius-md: #{rem(8)};
+  --radius-lg: #{rem(12)};
+
+  --shadow-sm: 0 #{rem(2)} #{rem(4)} rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 #{rem(4)} #{rem(10)} rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 #{rem(10)} #{rem(20)} rgba(0, 0, 0, 0.12);
+
+  --font-family-base: 'Inter', sans-serif;
+
+  --transition-duration: 0.4s;
+  --container-width: #{rem($container-laptop-width)};
+  --container-padding-x: #{rem(20)};
+}

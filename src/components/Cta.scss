@@ -1,0 +1,43 @@
+@use "../styles/helpers" as *;
+
+.cta {
+  padding-block: fluid(60, 40);
+  color: var(--color-bg-white);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: fluid(40, 20);
+    position: relative;
+
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    max-width: rem(700);
+  }
+
+  &__title {
+    @include fluid-text(32, 24);
+    margin-bottom: rem(16);
+    color: var(--color-bg-white);
+  }
+
+  &__text {
+    @include fluid-text(18, 15);
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+
+  &__action {
+    flex-shrink: 0;
+  }
+
+  &--green {
+    background: linear-gradient(135deg, var(--color-primary), darken(#27ae60, 15%));
+  }
+}

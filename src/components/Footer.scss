@@ -1,0 +1,156 @@
+@use "../styles/helpers" as *;
+
+.footer {
+  background-color: var(--color-bg-dark);
+  color: var(--color-border);
+  padding-top: fluid(80, 50);
+  margin-top: auto;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: fluid(40, 30);
+    padding-bottom: fluid(60, 40);
+    border-bottom: rem(1) solid rgba(255, 255, 255, 0.1);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: rem(20);
+
+    @include mobile {
+      align-items: center;
+    }
+  }
+
+  &__logo-badge {
+    display: inline-block;
+    background-color: var(--color-bg-white);
+    padding: rem(18) rem(26);
+    border-radius: 50%;
+    margin-bottom: rem(8);
+
+    img {
+      width: fluid(75, 55);
+      height: auto;
+      display: block;
+    }
+  }
+
+  &__desc {
+    @include fluid-text(16, 14);
+    max-width: rem(300);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__title {
+    color: var(--color-bg-white);
+    @include fluid-text(20, 18);
+    font-weight: 600;
+  }
+
+  &__menu,
+  &__contacts {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+    @include mobile-s {
+      align-items: center;
+    }
+  }
+
+  &__menu a {
+    color: rgba(255, 255, 255, 0.7);
+    @include fluid-text(16, 14);
+
+    @include hover {
+      color: var(--color-primary);
+    }
+  }
+
+  &__contacts li {
+    @include fluid-text(16, 14);
+    display: flex;
+    gap: rem(8);
+    color: rgba(255, 255, 255, 0.7);
+
+    @include mobile {
+      justify-content: center;
+    }
+
+    address {
+      @include mobile-s {
+        max-width: rem(160);
+        text-align: left;
+      }
+    }
+  }
+
+  &__label {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  &__link {
+    color: var(--color-bg-white);
+    font-weight: 600;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__address {
+    font-style: normal;
+  }
+
+  &__bottom {
+    padding-block: rem(24);
+    text-align: center;
+    @include fluid-text(14, 12);
+    color: rgba(255, 255, 255, 0.5);
+  }
+  &__socials {
+    display: flex;
+    gap: rem(16);
+    margin-top: rem(12);
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  &__social-link {
+    width: rem(40);
+    height: rem(40);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.6);
+    @include flex-center(true);
+    transition: all var(--transition-duration) ease;
+    border: rem(1) solid rgba(255, 255, 255, 0.1);
+
+    svg {
+      width: rem(20);
+      height: rem(20);
+    }
+
+    @include hover {
+      background-color: var(--color-primary);
+      color: var(--color-bg-white);
+      border-color: var(--color-primary);
+      transform: translateY(rem(-3));
+    }
+  }
+}

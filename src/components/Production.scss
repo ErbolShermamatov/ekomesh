@@ -1,0 +1,111 @@
+@use '../styles/helpers' as *;
+
+.production {
+  padding-block: fluid(100, 60);
+  background-color: var(--color-bg-white);
+
+  &__header {
+    text-align: center;
+    margin-bottom: fluid(60, 40);
+  }
+
+  &__title { 
+    margin-bottom: rem(16); 
+  }
+
+  &__subtitle {
+    color: var(--color-text-muted);
+    @include fluid-text(18, 16);
+    @include mobile {
+      max-width: rem(500);
+      margin: 0 auto;
+    }
+  }
+
+  &__navigation-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: fluid(25, 10);
+
+    @include mobile {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__slider {
+    flex-grow: 1;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+}
+
+.production-slide {
+  height: fluid(350, 290); 
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-border);
+  cursor: grab;
+
+  @include mobile {
+    max-width: rem(500);
+    margin: 0 auto;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.production__nav {
+  @include flex-center(true);
+  width: fluid(50, 40);
+  height: fluid(50, 40);
+  background-color: var(--color-bg-white);
+  color: var(--color-primary);
+  border: rem(2) solid var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  flex-shrink: 0;
+  transition: all var(--transition-duration) ease;
+
+  svg {
+    width: rem(24);
+    height: rem(24);
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  @include hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg-white);
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
+}
+.swiper-pagination {
+  position: static !important;
+  margin-top: rem(24);
+}

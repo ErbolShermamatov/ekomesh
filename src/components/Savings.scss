@@ -1,0 +1,206 @@
+@use '../styles/helpers' as *;
+
+.savings {
+  padding-block: fluid(100, 60);
+  background-color: var(--color-bg-white);
+
+  &__header {
+    text-align: center;
+    margin-bottom: fluid(60, 40);
+  }
+
+  &__title {
+    margin-bottom: rem(16);
+    .text-accent { 
+      color: var(--color-primary); 
+      white-space: nowrap;
+    }
+  }
+
+  &__subtitle {
+    color: var(--color-text-muted);
+    @include fluid-text(20, 16);
+
+    @include mobile {
+      max-width: rem(500);
+      margin: 0 auto;
+    }
+  }
+
+  &__compare {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: fluid(40, 20);
+    position: relative;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__vs {
+    @include fluid-text(20, 16);
+    width: fluid(50, 40);
+    aspect-ratio: 1;
+    background-color: var(--color-text-main);
+    color: var(--color-bg-white);
+    border-radius: 50%;
+    @include flex-center;
+    font-weight: 800;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    z-index: 10;
+    box-shadow: 0 0 0 rem(8) var(--color-bg-white);
+
+    @include tablet {
+      position: static;
+      translate: 0 0;
+      box-shadow: none;
+      margin-block: rem(-10);
+    }
+  }
+
+  &__total {
+    margin-top: fluid(60, 40);
+    background: linear-gradient(135deg, var(--color-primary), darken(#27ae60, 15%));
+    border-radius: var(--radius-lg);
+    padding: fluid(40, 24);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-bg-white);
+    box-shadow: var(--shadow-md);
+
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+      gap: rem(20);
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(8);
+      
+    }
+    &-text h4 {
+      @include fluid-text(28, 20);
+      color: var(--color-bg-white);
+    }
+
+    &-text p {
+      @include fluid-text(18, 14);
+      opacity: 0.9;
+    }
+
+    &-sum {
+      font-weight: 800;
+      @include fluid-text(48, 32);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      column-gap: fluid(10, 5);
+
+      span {
+        font-size: 50%;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.compare-card {
+  flex: 1;
+  width: 100%;
+  max-width: rem(500);
+  background-color: var(--color-bg-body);
+  border-radius: var(--radius-lg);
+  padding: fluid(40, 24);
+  position: relative;
+  overflow: hidden;
+  border: rem(2) solid transparent;
+
+  &--bad {
+    opacity: 0.8;
+  }
+
+  &--good {
+    border-color: var(--color-primary);
+    background-color: var(--color-bg-white);
+    box-shadow: var(--shadow-md);
+    transform: scale(1.05);
+    z-index: 2;
+
+    @include tablet {
+      transform: scale(1);
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--color-primary);
+    color: var(--color-bg-white);
+    padding: fluid(6, 3) fluid(16, 12);
+    font-size: fluid(12, 10);
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom-left-radius: var(--radius-md);
+  }
+
+  &__title {
+    @include fluid-text(24, 20);
+    text-align: center;
+    margin-bottom: fluid(30, 20);
+    color: var(--color-text-main);
+  }
+
+  &__row {
+    @include fluid-text(16, 14);
+    display: flex;
+    justify-content: space-between;
+    padding-block: rem(12);
+    border-bottom: rem(1) dashed var(--color-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    span {
+      color: var(--color-text-muted);
+    }
+    strong {
+      color: var(--color-text-main);
+      text-align: right;
+    }
+  }
+
+  &__footer {
+    margin-top: rem(30);
+    padding-top: rem(20);
+    border-top: rem(2) solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(8);
+
+    span {
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+  }
+
+  &__price {
+    font-weight: 800 !important;
+    color: var(--color-text-main) !important;
+    @include fluid-text(36, 28);
+    
+    span {
+      font-size: rem(16);
+    }
+  }
+}
