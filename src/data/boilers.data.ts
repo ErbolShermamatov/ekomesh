@@ -5,12 +5,12 @@ export const equipments: IAuxiliaryEquipment[] = [
   {
     id: 'eq-smoke-exhauster',
     title: 'Промышленный дымосос (Вентилятор)',
-    imageUrl: 'public/assets/smoke-exhauster.png'
+    imageUrl: '/assets/smoke-exhauster.png'
   },
   {
     id: 'eq-cyclone',
     title: 'Циклон-золоуловитель',
-    imageUrl: 'public/assets/cyclone.png'
+    imageUrl: '/assets/cyclone.png'
   },
 ]
 
