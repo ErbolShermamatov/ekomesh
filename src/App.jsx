@@ -5,6 +5,7 @@ import Savings from "./components/Savings";
 import Catalog from "./components/Catalog";
 import Production from "./components/Production";
 import Contacts from "./components/Contacts";
+import OrderModal from "./components/OrderModal";
 import Footer from "./components/Footer";
 import Cta from "./components/Cta";
 
@@ -31,7 +32,7 @@ function App() {
         <Cta
           variant="green"
           title="Остались вопросы по окупаемости?"
-          text="В нашей полной брошюре есть подробные таблицы расчета окупаемости котлов ЭКО-МЕШ для разных типов бизнеса (клиник, заводов, ЖК).."
+          text="В нашей полной брошюре есть подробные таблицы расчета окупаемости котлов ЭКО-МЕШ для разных типов бизнеса (клиник, заводов, ЖК)."
           buttonText="Скачать брошюру (PDF)"
           buttonLink="/public/brochure.pdf"
           downloadText="Брошюра_ЭКО-МЕШ.pdf"

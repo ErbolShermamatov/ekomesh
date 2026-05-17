@@ -76,14 +76,6 @@ function Header() {
             >
               +996 (553) 09-94-94
             </a>
-            <a
-              href="#contacts"
-              onClick={closeMenu}
-              className="btn btn--primary"
-              style={{ marginTop: "20px" }}
-            >
-              Заказать звонок
-            </a>
           </div>
         </nav>
 
@@ -106,13 +98,6 @@ function Header() {
               +996 (553) 09-94-94
             </a>
           </div>
-
-          <a
-            href="#contacts"
-            className="hidden-laptop btn btn--primary header__btn"
-          >
-            Заказать звонок
-          </a>
 
           <button
             className={`burger-btn ${isMenuOpen ? "burger-btn--active" : ""}`}
