@@ -9,6 +9,9 @@ function Savings() {
           <h2 className="savings__title">
             Калькулятор окупаемости <span className="text-accent">(0.7&nbsp;МВт)</span>
           </h2>
+          <p className='savings__subtitle'>
+            В примере котла КВПр-0.7 (0.6 ГКал/ч)
+          </p>
           <p className="savings__subtitle">
             Сравнение затрат за 1 отопительный сезон (5 месяцев)
           </p>
@@ -19,8 +22,12 @@ function Savings() {
             <h3 className="compare-card__title">Стандартный котел</h3>
             <div className="compare-card__body">
               <div className="compare-card__row">
-                <span>Расход в сутки:</span>
-                <strong>1730 кг</strong>
+                <span>КПД:</span>
+                <strong>76-78</strong>
+              </div>
+              <div className="compare-card__row">
+                <span>Расход в сутки в среднем за отопительный сезон:</span>
+                <strong>1800 кг</strong>
               </div>
               <div className="compare-card__row">
                 <span>Требуемый уголь:</span>
@@ -28,12 +35,12 @@ function Savings() {
               </div>
               <div className="compare-card__row">
                 <span>Цена угля:</span>
-                <strong>~ 5 сом / кг</strong>
+                <strong>~ 6 сом / кг</strong>
               </div>
             </div>
             <div className="compare-card__footer">
               <span>Затраты за сезон:</span>
-              <span className="compare-card__price">1 297 500 <span>сом</span></span>
+              <span className="compare-card__price">1 620 000 <span>сом</span></span>
             </div>
           </div>
 
@@ -44,21 +51,25 @@ function Savings() {
             <h3 className="compare-card__title">Котел «ЭКО-МЕШ»</h3>
             <div className="compare-card__body">
               <div className="compare-card__row">
-                <span>Расход в сутки:</span>
-                <strong>1350 кг</strong>
+                <span>КПД:</span>
+                <strong>86-88</strong>
+              </div>
+              <div className="compare-card__row">
+                <span>Расход в сутки в среднем <br /> за отопительный сезон:</span>
+                <strong>1300 кг</strong>
               </div>
               <div className="compare-card__row">
                 <span>Требуемый уголь:</span>
-                <strong>0-15 мм (штыб, семечка)</strong>
+                <strong>БР + БСШ</strong>
               </div>
               <div className="compare-card__row">
                 <span>Цена угля:</span>
-                <strong>2.8 сом / кг</strong>
+                <strong>5 сом / кг</strong>
               </div>
             </div>
             <div className="compare-card__footer">
               <span>Затраты за сезон:</span>
-              <span className="compare-card__price">567 000 <span>сом</span></span>
+              <span className="compare-card__price">975 000 <span>сом</span></span>
             </div>
           </div>
         </div>
@@ -66,10 +77,10 @@ function Savings() {
         <div className="savings__total">
           <div className="savings__total-text">
             <h4 className='saving__total-title'>Чистая экономия за 1 сезон:</h4>
-            <p>Разница полностью окупает стоимость котла!</p>
+            <p>Разница окупает стоимость котла на 90%</p>
           </div>
           <div className="savings__total-sum">
-            730 000 <span>сом</span>
+            645 000 <span>сом</span>
           </div>
         </div>
 

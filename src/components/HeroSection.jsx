@@ -10,7 +10,7 @@ function HeroSection() {
         <div className="hero__content">
           <span className="hero__badge">Инновационные технологии обогрева</span>
           <h1 className='hero__title'>
-            Промышленные котлы <br />
+            <p>Промышленные котлы</p>
             <span className='text-accent'>ЭКО-МЕШ</span>
           </h1>
           <p className="hero__subtitle">Экологичное тепло для вашего бизнеса с экономией угля до 30%. Окупаемость всего за 1 отопительный сезон.</p>

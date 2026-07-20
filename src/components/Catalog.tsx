@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./Catalog.scss";
-import boilerImg from "../assets/boiler-card.jpeg";
 import { boilers, equipments } from "../data/boilers.data";
 import OrderModal from "./OrderModal";
 
@@ -16,7 +15,7 @@ function Catalog() {
         <div className="catalog__header">
           <h2 className="catalog__title">Каталог промышленных котлов</h2>
           <p className="catalog__subtitle">
-            Подберем оптимальную мощность: от обогрева теплицы до целого завода
+            Тип и модель котла в зависимости от вида топлива и способа подачи
           </p>
         </div>
 
@@ -28,16 +27,20 @@ function Catalog() {
               )}
 
               <div className="boiler-card__image">
-                <img loading="lazy" src={boilerImg} alt={boiler.title} />
+                <img loading="lazy" src={boiler.imageUrl} alt={boiler.title} />
               </div>
 
               <div className="boiler-card__content">
-                <h3 className="boiler-card__title">{boiler.title}</h3>
+                <h3 className="boiler-card__title"><p>«ЭКО-МЕШ»</p><p>{boiler.title}</p></h3>
 
                 <ul className="boiler-card__specs">
                   <li className="boiler-card__specs-item">
                     <span>Мощность:</span>
                     <strong>{boiler.powerKw} кВт</strong>
+                  </li>
+                  <li className="boiler-card__specs-item">
+                    <span>{boiler.title === 'Тип котла: КВГМ-1.5 МВт (Газ/Мазут)' ? 'Вид топлива' : 'Марка угля'}</span>
+                    <strong>{boiler.fuelType}</strong>
                   </li>
                   <li className="boiler-card__specs-item">
                     <span>Отапливаемая площадь:</span>

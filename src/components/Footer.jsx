@@ -51,7 +51,7 @@ function Footer() {
               </a>
 
               <a
-                href="https://www.instagram.com/eco.kotel/"
+                href="https://www.instagram.com/eco.kotel?igsh=YjhydXBtMTd1c3B4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer__social-link"
@@ -119,7 +119,7 @@ function Footer() {
               </li>
               <li className="footer__contacts-item">
                 <span className="footer__label">График:</span>
-                <span className="footer__schedule">Пн-Пт: 09:00 - 18:00</span>
+                <span className="footer__schedule">Пн-Сб: 09:00 - 18:00</span>
               </li>
             </ul>
           </div>
