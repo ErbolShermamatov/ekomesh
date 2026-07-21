@@ -45,7 +45,7 @@ function Catalog() {
                   <li className="boiler-card__specs-item">
                     <span>Отапливаемая площадь:</span>
                     <strong>
-                      до {boiler.heatingAreaSqM.toLocaleString("ru-RU")} м²
+                      {boiler.heatingAreaSqM}&nbsp;м²
                     </strong>
                   </li>
                   <li className="boiler-card__specs-item">
@@ -59,6 +59,14 @@ function Catalog() {
                 </ul>
 
                 <div className="boiler-card__footer">
+                  {boiler.posterUrl ? (
+                    <a
+                    href={boiler.posterUrl} className="btn btn--primary boiler-card__download-link" download>
+                      Скачать подробную информацию
+                    </a>
+                    )
+                    : null
+                  }
                   <button
                     type="button"
                     onClick={openModal}

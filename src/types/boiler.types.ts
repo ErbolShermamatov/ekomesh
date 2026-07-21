@@ -4,13 +4,14 @@ export type FuelType = "Бурый и каменный уголь" | "Газ/М�
 export interface IBoiler {
   id: string;
   title: string;
-  powerKw: number;
-  heatingAreaSqM: number;
-  efficiencyPercent: number;
+  powerKw: string;
+  heatingAreaSqM: string;
+  efficiencyPercent: string;
   feedType: BoilerFeedType;
   fuelType: FuelType;
   coalFraction?: string;
   imageUrl: string;
+  posterUrl ?: string;
   isBestseller?: boolean;
 }
 

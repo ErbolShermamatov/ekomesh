@@ -40,4 +40,7 @@
   &--green {
     background: linear-gradient(135deg, var(--color-primary), darken(#27ae60, 15%));
   }
+  &--orange {
+    background: linear-gradient(135deg, var(--color-accent));
+  }
 }
