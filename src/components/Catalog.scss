@@ -82,6 +82,14 @@
     font-weight: 700;
     text-transform: uppercase;
   }
+  
+  .btn {
+    svg {
+      width: rem(20);
+      height: rem(20);
+      flex-shrink: 0;
+    }
+  }
 
   &__image {
     align-self: center;

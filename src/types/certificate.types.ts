@@ -3,4 +3,5 @@ export interface ICertificate {
   title: string;
   text: string;
   fileUrl: string;
+  imageUrl: string;
 }
