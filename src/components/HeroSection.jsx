@@ -15,7 +15,7 @@ function HeroSection() {
           </h1>
           <p className="hero__subtitle">Экологичное тепло для вашего бизнеса с экономией угля до 30%. Окупаемость всего за 1 отопительный сезон.</p>
           <div className="hero__actions">
-            <a href="#catalog" className="btn btn--primary">Подобрать котел</a>
+            <a href="#catalog" className="btn btn--primary hero__link">Подобрать котел</a>
           </div>
         </div>
       </div>

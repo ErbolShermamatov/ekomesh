@@ -28,6 +28,11 @@
       padding-block: rem(40);
     }
   }
+  &__link {
+    @include mobile {
+      width: 50%;
+    }
+  }
 
   &__content {
     max-width: rem(800); 

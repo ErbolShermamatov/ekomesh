@@ -92,6 +92,12 @@
     margin-bottom: rem(24);
   }
 
+  &__btn {
+    @include mobile {
+      width: 80%;
+    }
+  }
+
   &__link {
     display: inline-flex;
     align-items: center;

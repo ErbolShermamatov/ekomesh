@@ -61,6 +61,10 @@
     @include fluid-text(24, 20);
     margin-bottom: rem(30);
     color: var(--color-text-main);
+
+    @include mobile {
+      align-self: center;
+    }
   }
 
   &__list {
@@ -106,6 +110,11 @@
 
   &__btn {
     margin-top: auto;
+
+    @include mobile {
+      align-self: center;
+      width: 80%;
+    }
   }
 
   &__map {
