@@ -8,6 +8,7 @@ import Contacts from "./components/Contacts";
 import OrderModal from "./components/OrderModal";
 import Footer from "./components/Footer";
 import Cta from "./components/Cta";
+import Certificates from "./components/Certificates";
 
 function App() {
   return (
@@ -22,21 +23,22 @@ function App() {
           variant="green"
           title="Нужна подробная техническая информация?"
           text="Скачайте нашу полную презентацию. Внутри: схемы работы скрубберов очистки дыма, точные расчеты КПД и сравнение эффективности с электрическими и газовыми котлами."
-          buttonText="Скачать презентацию (PDF)"
+          buttonText="Открыть презентацию (PDF)"
           buttonLink="/presentation.pdf"
           downloadText="Презентация_ЭКО-МЕШ.pdf"
-          isDownload={true}
+          isDownload={false}
         />
         <Production />
+        <Certificates />
         <Contacts />
         <Cta
           variant="orange"
           title="Остались вопросы по окупаемости?"
           text="В нашей полной брошюре есть подробные таблицы расчета окупаемости котлов ЭКО-МЕШ для разных типов бизнеса (клиник, заводов, ЖК)."
-          buttonText="Скачать брошюру (PDF)"
+          buttonText="Открыть брошюру (PDF)"
           buttonLink="/brochure.pdf"
           downloadText="Брошюра_ЭКО-МЕШ.pdf"
-          isDownload={true}
+          isDownload={false}
         />
       </main>
       <Footer />

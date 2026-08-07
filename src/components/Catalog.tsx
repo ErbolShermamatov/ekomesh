@@ -31,7 +31,10 @@ function Catalog() {
               </div>
 
               <div className="boiler-card__content">
-                <h3 className="boiler-card__title"><p>«ЭКО-МЕШ»</p><p>{boiler.title}</p></h3>
+                <h3 className="boiler-card__title">
+                  <p>«ЭКО-МЕШ»</p>
+                  <p>{boiler.title}</p>
+                </h3>
 
                 <ul className="boiler-card__specs">
                   <li className="boiler-card__specs-item">
@@ -39,14 +42,16 @@ function Catalog() {
                     <strong>{boiler.powerKw} кВт</strong>
                   </li>
                   <li className="boiler-card__specs-item">
-                    <span>{boiler.title === 'Тип котла: КВГМ-1.5 МВт (Газ/Мазут)' ? 'Вид топлива' : 'Марка угля'}</span>
+                    <span>
+                      {boiler.title === "Тип котла: КВГМ-1.5 МВт (Газ/Мазут)"
+                        ? "Вид топлива"
+                        : "Марка угля"}
+                    </span>
                     <strong>{boiler.fuelType}</strong>
                   </li>
                   <li className="boiler-card__specs-item">
                     <span>Отапливаемая площадь:</span>
-                    <strong>
-                      {boiler.heatingAreaSqM}&nbsp;м²
-                    </strong>
+                    <strong>{boiler.heatingAreaSqM}&nbsp;м²</strong>
                   </li>
                   <li className="boiler-card__specs-item">
                     <span>КПД:</span>
@@ -61,12 +66,27 @@ function Catalog() {
                 <div className="boiler-card__footer">
                   {boiler.posterUrl ? (
                     <a
-                    href={boiler.posterUrl} className="btn btn--primary boiler-card__download-link" download>
-                      Скачать подробную информацию
+                      href={boiler.posterUrl}
+                      className="btn btn--outline-primary boiler-card__download-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Открыть подробную информацию
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        style={{ width: "1.25em", height: "1.25em" }}
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
                     </a>
-                    )
-                    : null
-                  }
+                  ) : null}
                   <button
                     type="button"
                     onClick={openModal}

@@ -6,7 +6,24 @@
   z-index: 1000;
   @include flex-center;
   padding: var(--container-padding-x);
-  
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    .modal__content {
+      transform: translateY(0);
+    }
+  }
+
   &__overlay {
     @include abs-cover;
     background-color: rgba(30, 39, 46, 0.7);
@@ -22,8 +39,9 @@
     border-radius: var(--radius-lg);
     padding: fluid(40, 24) fluid(30, 20);
     box-shadow: var(--shadow-lg);
-    
-    animation: modalFadeIn 0.3s ease-out forwards;
+
+    transform: translateY(rem(20));
+    transition: transform 0.3s ease-out;
   }
 
   &__close {
@@ -74,12 +92,65 @@
     border-radius: var(--radius-sm);
     background-color: var(--color-bg-body);
     color: var(--color-text-main);
-    transition: border-color var(--transition-duration), box-shadow var(--transition-duration);
+    transition:
+      border-color var(--transition-duration),
+      box-shadow var(--transition-duration);
+    font-family: inherit;
+    font-size: rem(16);
 
     &:focus {
       outline: none;
-      border-color: var(--color-primary); // Твой зеленый
+      border-color: var(--color-primary);
       box-shadow: 0 0 0 rem(3) rgba(39, 174, 96, 0.1);
+    }
+  }
+
+  &__phone-container {
+    width: 100%;
+    font-family: var(--font-family-base) !important;
+
+    .modal__input--phone {
+      width: 100% !important;
+      height: auto !important;
+      padding: rem(12) rem(16) !important;
+      padding-left: rem(60) !important;
+    }
+
+    .modal__phone-btn {
+      background-color: transparent !important;
+      border: none !important;
+      border-right: rem(1) solid var(--color-border) !important;
+      border-radius: var(--radius-sm) 0 0 var(--radius-sm) !important;
+      width: rem(48) !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all var(--transition-duration) ease !important;
+
+      &:hover,
+      &:focus,
+      &.open {
+        background-color: transparent !important;
+      }
+
+      .selected-flag {
+        background-color: transparent !important;
+
+        &:hover,
+        &:focus,
+        &.open {
+          background-color: transparent !important;
+        }
+      }
+    }
+
+    .country-list {
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-md);
+      border: rem(1) solid var(--color-border);
+      margin-top: rem(4);
+      width: rem(300);
+      max-width: 90vw;
     }
   }
 
@@ -87,28 +158,19 @@
     margin-top: rem(8);
     width: 100%;
     padding: rem(14);
-    background-color: var(--color-accent); 
+    background-color: var(--color-accent);
     color: var(--color-bg-white);
     border: none;
     border-radius: var(--radius-sm);
     font-weight: 600;
     cursor: pointer;
-    transition: background-color var(--transition-duration), transform var(--transition-duration);
+    transition:
+      background-color var(--transition-duration),
+      transform var(--transition-duration);
 
     @include hover {
       transform: translateY(rem(-2));
       background-color: darken(#e67e22, 10%);
     }
-  }
-}
-
-@keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(rem(20));
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

@@ -1,4 +1,7 @@
 import { useState, FormEvent, useEffect } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import ru from 'react-phone-input-2/lang/ru.json'; 
 import "./OrderModal.scss";
 
 const BOT_TOKEN = "8903633291:AAHxXoPI16hDUIXKawUrQayuUbc1JbTDrO8";
@@ -14,7 +17,6 @@ function OrderModal({
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [power, setPower] = useState("");
-
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -29,37 +31,6 @@ function OrderModal({
     };
   }, [isOpen]);
 
-  if (!isOpen) {
-    return null;
-  }
-
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let rawValue = e.target.value.replace(/\D/g, "");
-
-    if (!rawValue) {
-      setPhone("");
-      return;
-    }
-    if (rawValue.startsWith("996")) {
-      rawValue = rawValue.slice(3);
-    }
-    let formatted = "+996 ";
-    
-    if (rawValue.length > 0) {
-      formatted += "(" + rawValue.substring(0, 3);
-    }
-    if (rawValue.length >= 4) {
-      formatted += ") " + rawValue.substring(3, 5);
-    }
-    if (rawValue.length >= 6) {
-      formatted += "-" + rawValue.substring(5, 7);
-    }
-    if (rawValue.length >= 8) {
-      formatted += "-" + rawValue.substring(7, 9);
-    }
-    setPhone(formatted);
-  };
-
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -67,7 +38,7 @@ function OrderModal({
     const message = `
 - Новая заявка на расчет!
 - Имя: ${name}
-- Телефон: ${phone}
+- Телефон: +${phone}
 - Мощность: ${power}
     `;
 
@@ -105,8 +76,9 @@ function OrderModal({
       setIsLoading(false);
     }
   };
+
   return (
-    <div className="modal">
+    <div className={`modal ${isOpen ? "is-active" : ""}`}>
       <div className="modal__overlay" onClick={onClose}></div>
 
       <div className="modal__content">
@@ -132,15 +104,15 @@ function OrderModal({
 
           <div className="modal__field">
             <label htmlFor="user-number">Телефон:</label>
-            <input
-              type="tel"
-              required
-              id="user-number"
-              className="modal__input"
-              placeholder="+996 555 123 456"
+            <PhoneInput
+              country={"kg"}
               value={phone}
-              onChange={handlePhoneChange}
-              maxLength={19}
+              onChange={(phone) => setPhone(phone)}
+              placeholder="+996 555 123 456"
+              localization={ru}
+              containerClass="modal__phone-container"
+              inputClass="modal__input modal__input--phone"
+              buttonClass="modal__phone-btn"
             />
           </div>
 

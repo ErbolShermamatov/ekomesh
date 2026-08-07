@@ -126,6 +126,7 @@ $header-bp: rem(1200);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: rem(6);
   text-decoration: none;
   transition: all var(--transition-duration) ease;
 
@@ -170,6 +171,16 @@ $header-bp: rem(1200);
         color: var(--color-text-main);
       }
     }
+  &--outline-primary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: rem(2) solid var(--color-primary);
+
+    @include hover {
+      background-color: var(--color-primary);
+      color: var(--color-bg-white);
+    }
+  }
 }
 
 .burger-btn {
