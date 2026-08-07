@@ -32,7 +32,7 @@ function Catalog() {
 
               <div className="boiler-card__content">
                 <h3 className="boiler-card__title">
-                  <p>«ЭКО-МЕШ»</p>
+                  <p className="boiler-card__name">«ЭКО-МЕШ»</p>
                   <p>{boiler.title}</p>
                 </h3>
 
@@ -111,6 +111,19 @@ function Catalog() {
                 </div>
                 <div className="boiler-equip-card__content">
                   <h3 className="boiler-equip-card__title">{equip.title}</h3>
+                  <div className="boiler-equip-card__info">
+                    <h4 className="boiler-equip-card__type-title">Типа:</h4>
+                    <ul className="boiler-equip-card__types">
+                      {equip.types.map((type) => (
+                        <li
+                          className="boiler-equip-card__types-item"
+                          key={type}
+                        >
+                          - {type}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             ))}

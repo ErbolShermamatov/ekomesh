@@ -19,4 +19,5 @@ export interface IAuxiliaryEquipment {
   id: string;
   title: string;
   imageUrl: string;
+  types: string[];
 }
