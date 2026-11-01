@@ -2,6 +2,7 @@ import { ICertificate } from '../types/certificate.types';
 import cert1Img from '../assets/ЭКО-МЕШ-Деклар.26-preview.jpg';
 import cert2Img from '../assets/ЭКО-МЕШ-ПисьмоМин.Энерго-preview.jpg';
 import cert3Img from '../assets/ЭКО-МЕШ-Эко.серт.2025г-preview.jpg';
+import cert4Img from '../assets/ЭКО-МЕШ-Патент-preview.jpg';
 
 export const certificatesData: ICertificate[] = [
   {
@@ -24,5 +25,12 @@ export const certificatesData: ICertificate[] = [
     text: 'Протокол испытаний экологического мониторинга промышленных выбросов.',
     fileUrl: '/ЭКО-МЕШ - Эко.серт.2025г.pdf',
     imageUrl: cert3Img,
+  },
+  {
+    id: 4,
+    title: "Патент на изобретение",
+    text: "Пиролизный котел длительного горения",
+    fileUrl: '/ЭКО-МЕШ - Патент.pdf',
+    imageUrl: cert4Img
   }
 ];
